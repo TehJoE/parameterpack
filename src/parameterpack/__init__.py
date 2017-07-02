@@ -7,7 +7,7 @@ import sys
 
 PY35 = sys.version_info >= (3, 5)
 
-__version__ = "0.0.0"
+__version__ = "0.1.0"
 
 
 def pack(*args):
