@@ -1,17 +1,12 @@
 import pytest
 
-from src.parameterpack import ParameterPack
+from parameterpack import ParameterPack
 from .lisplet import Lisplet
 
 
 @pytest.fixture
 def pack():
     return ParameterPack(Lisplet(1), Lisplet(2), Lisplet(3))
-
-
-@pytest.fixture
-def pack_nonzero(pack):
-    return ParameterPack(*(item if item != 0 else 1 for item in pack.items))
 
 
 def test_add(pack):
@@ -42,12 +37,6 @@ def test_floordiv(pack):
     a, b, c = pack.items
 
     assert pack // ... == (a // b) // c
-
-
-def test_matmul(pack):
-    a, b, c = pack.items
-
-    assert pack @ ... == (a @ b) @ c
 
 
 def test_mod(pack):
@@ -166,12 +155,6 @@ def test_right_floordiv(pack):
     assert ... // pack == a // (b // c)
 
 
-def test_right_matmul(pack):
-    a, b, c = pack.items
-
-    assert ... @ pack == a @ (b @ c)
-
-
 def test_right_mod(pack):
     a, b, c = pack.items
 
@@ -249,3 +232,4 @@ def test_call(pack):
 
 def test_unpack(pack):
     assert ParameterPack(*pack).items == pack.items
+

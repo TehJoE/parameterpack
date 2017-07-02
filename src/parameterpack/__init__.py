@@ -3,6 +3,9 @@ import functools
 import operator
 from .helpers import left_op, right_op, reduce_right, sliding_window
 
+import sys
+
+PY35 = sys.version_info >= (3, 5)
 
 __version__ = "0.0.0"
 
@@ -64,12 +67,14 @@ class ParameterPack:
         if index is None:
             raise NotImplemented
 
-        return functools.reduce(lambda xs, x: xs(*args[:index], x, *args[index + 1:], **kwargs), self.items)
+        def prepare_args(x):
+            return args[:index] + (x,) + args[index + 1:]
+
+        return functools.reduce(lambda xs, x: xs(*prepare_args(x), **kwargs), self.items)
 
     __add__ = left_op(operator.add)
     __sub__ = left_op(operator.sub)
     __mul__ = left_op(operator.mul)
-    __matmul__ = left_op(operator.matmul)
     __floordiv__ = left_op(operator.floordiv)
     __truediv__ = left_op(operator.truediv)
     __mod__ = left_op(operator.mod)
@@ -78,6 +83,7 @@ class ParameterPack:
     __xor__ = left_op(operator.xor)
     __lshift__ = left_op(operator.lshift)
     __rshift__ = left_op(operator.rshift)
+
     __eq__ = left_op(operator.eq, comparison=True)
     __ne__ = left_op(operator.ne, comparison=True)
     __lt__ = left_op(operator.lt, comparison=True)
@@ -88,7 +94,6 @@ class ParameterPack:
     __radd__ = right_op(operator.add)
     __rsub__ = right_op(operator.sub)
     __rmul__ = right_op(operator.mul)
-    __rmatmul__ = right_op(operator.matmul)
     __rfloordiv__ = right_op(operator.floordiv)
     __rtruediv__ = right_op(operator.truediv)
     __rmod__ = right_op(operator.mod)
@@ -97,6 +102,10 @@ class ParameterPack:
     __rxor__ = right_op(operator.xor)
     __rlshift__ = right_op(operator.lshift)
     __rrshift__ = right_op(operator.rshift)
+
+    if PY35:
+        __matmul__ = left_op(operator.matmul)
+        __rmatmul__ = right_op(operator.matmul)
 
 
 def nope(*args, **kwargs):

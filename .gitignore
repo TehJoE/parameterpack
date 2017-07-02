@@ -1,11 +1,13 @@
 # Pycharm IDE files
 .idea/
 
-# Pytest cache
-.cache/
-
 # Compiled python files
 *.pyc
+*.pyo
+__pycache__/
 
-# Egg files
+# Misc tooling dotfiles/dotfolders
+.cache/
 *.egg-info
+.tox/
+.eggs/

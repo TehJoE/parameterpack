@@ -99,14 +99,6 @@ class Lisplet:
     Traceback (most recent call last):
         ...
     IndexError: tuple index out of range
-    >>> [*Lisplet(1, 2)]
-    [1, 2]
-    >>> [*Lisplet(1)]
-    [1]
-    >>> [*Lisplet(None, 2)]
-    [2]
-    >>> [*Lisplet()]
-    []
     >>> [item for item in Lisplet(1, 2)]
     [1, 2]
     >>> [item for item in Lisplet(1)]
@@ -126,8 +118,6 @@ class Lisplet:
     >>> a - b
     Lisplet(Lisplet(1), 2)
     >>> a * b
-    Lisplet(Lisplet(1), 2)
-    >>> a @ b
     Lisplet(Lisplet(1), 2)
     >>> a / b
     Lisplet(Lisplet(1), 2)
@@ -152,8 +142,6 @@ class Lisplet:
     >>> b - a
     Lisplet(2, Lisplet(1))
     >>> b * a
-    Lisplet(2, Lisplet(1))
-    >>> b @ a
     Lisplet(2, Lisplet(1))
     >>> b / a
     Lisplet(2, Lisplet(1))

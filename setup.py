@@ -4,9 +4,10 @@ from os import path
 import re
 
 here = path.abspath(path.dirname(__file__))
+pattern = re.compile(r'^\.\. start-badges(.*)^\.\. end-badges\s*', re.MULTILINE | re.DOTALL)
 
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
-    long_description = re.sub(r'^\.\. start-badges.*^\.\. end-badges', '', f.read(), re.MULTILINE | re.DOTALL)
+    long_description = re.sub(pattern, '', f.read())
 
 setup(
     name='parameterpack',
@@ -50,6 +51,6 @@ setup(
     setup_requires=['pytest-runner'],
 
     extras_require={
-        'dev': ['bumpversion'],
+        'dev': ['bumpversion', 'tox'],
     }
 )

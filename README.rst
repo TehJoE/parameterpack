@@ -84,6 +84,17 @@ comparison chain, it will return a special object that will return ``False`` for
 last element of the parameter pack is returned so that the comparison chain can continue.
 
 
+Running Tests
+-------------
+
+To run this module's tests in your system's Python interpreter, simply run ``python setup.py test`` from the
+repository root.
+
+To run tests in all supported interpreters, first ensure that every supported Python interpreter is installed on your
+system and added to the `PATH` environment variable. Then run ``pip install -e .[dev]`` from the repository root to
+install development dependencies, and then run ``tox`` from the repository root to run the tests.
+
+
 Bugs Reports and Feature Requests
 ---------------------------------
 
