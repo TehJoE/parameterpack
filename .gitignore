@@ -5,6 +5,8 @@
 *.pyc
 *.pyo
 __pycache__/
+dist/
+build/
 
 # Misc tooling dotfiles/dotfolders
 .cache/

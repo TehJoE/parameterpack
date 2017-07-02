@@ -2,19 +2,14 @@ Parameter Pack
 --------------
 
 .. start-badges
-
 .. image:: https://img.shields.io/pypi/v/parameterpack.svg
     :target: https://pypi.python.org/pypi/parameterpack
-
 .. image:: https://img.shields.io/pypi/pyversions/parameterpack.svg
     :target: https://pypi.python.org/pypi/parameterpack
-
 .. image:: https://img.shields.io/github/release/TehJoE/parameterpack.svg
     :target: https://github.com/TehJoE/parameterpack/releases/latest
-
 .. image:: https://img.shields.io/github/license/TehJoE/parameterpack.svg
     :target: https://github.com/TehJoE/parameterpack/blob/master/LICENSE
-
 .. end-badges
 
 This module provides a mechanism for writing something similar to C++17's `fold expressions`_ in Python. This is
