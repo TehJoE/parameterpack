@@ -4,6 +4,9 @@ import operator
 from .helpers import left_op, right_op, reduce_right, sliding_window
 
 
+__version__ = "0.0.0"
+
+
 def pack(*args):
     return ParameterPack(*args)
 
