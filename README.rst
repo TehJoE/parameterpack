@@ -19,20 +19,20 @@ achieved by co-opting Python's mostly unused ``Ellipsis`` literal.
 Supported Operators
 -------------------
 
- - Addition (``+``)
- - Subtraction (``-``)
- - Multiplication (``*``)
- - Integer division (``//``)
- - Division (``/``)
- - Modulus (``%``)
- - Matrix Multiplication (``@``, Python >= 3.5 only)
- - Bitwise And (``&``)
- - Bitwise Or (``|``)
- - Bitwise Xor (``^``)
- - Left Shift (``<<``)
- - Right Shift (``>>``)
- - ``__call__``
- - Comparison operators (``>``, ``>=``, ``<``, ``<=``, ``==``, ``!=``)
+- Addition (``+``)
+- Subtraction (``-``)
+- Multiplication (``*``)
+- Integer division (``//``)
+- Division (``/``)
+- Modulus (``%``)
+- Matrix Multiplication (``@``, Python >= 3.5 only)
+- Bitwise And (``&``)
+- Bitwise Or (``|``)
+- Bitwise Xor (``^``)
+- Left Shift (``<<``)
+- Right Shift (``>>``)
+- ``__call__``
+- Comparison operators (``>``, ``>=``, ``<``, ``<=``, ``==``, ``!=``)
 
 
 Examples
